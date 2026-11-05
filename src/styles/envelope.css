@@ -1,0 +1,121 @@
+
+/* ENVELOPE ANIMATION */
+
+.envelope-scene {
+  width: 280px;
+  height: 245px;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
+  margin: 20px 0;
+}
+
+.envelope {
+  width: 230px;
+  height: 145px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #d98eac;
+  border: 1px solid #f9d9e6;
+  box-shadow: 0 15px 30px #0005;
+}
+
+.letter-paper {
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  bottom: 8px;
+  width: 200px;
+  height: 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #b45d82;
+  background: #fff4f8;
+  border: 1px solid #f4c5d7;
+  box-shadow: 0 5px 15px #0002;
+}
+
+.letter-paper span {
+  font-family: var(--heading-font);
+  font-size: 25px;
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 115px solid transparent;
+  border-right: 115px solid transparent;
+  border-top: 85px solid #f0b5cb;
+  transform-origin: top center;
+  backface-visibility: visible;
+}
+
+.envelope-front {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.envelope-fold {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.left-fold {
+  bottom: 0;
+  left: 0;
+  border-top: 72px solid transparent;
+  border-bottom: 73px solid transparent;
+  border-left: 115px solid #e9a5be;
+}
+
+.right-fold {
+  bottom: 0;
+  right: 0;
+  border-top: 72px solid transparent;
+  border-bottom: 73px solid transparent;
+  border-right: 115px solid #d987a7;
+}
+
+.bottom-fold {
+  bottom: 0;
+  left: 0;
+  border-left: 115px solid transparent;
+  border-right: 115px solid transparent;
+  border-bottom: 90px solid #e5a0b9;
+}
+
+.wax-seal {
+  position: absolute;
+  z-index: 7;
+  top: 58px;
+  left: 50%;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  color: #ffeaf1;
+  background: radial-gradient(circle at 30% 25%, #edabc3, #a74770);
+  box-shadow: 0 4px 12px #0004, inset 0 0 5px #fff5;
+}
+
+.envelope-modal {
+  overflow: visible;
+}

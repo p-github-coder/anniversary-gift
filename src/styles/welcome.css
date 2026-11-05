@@ -1,0 +1,299 @@
+
+.welcome-screen {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 55px 20px;
+  background:
+    radial-gradient(ellipse at center, #38202d 0%, #1b1119 52%, #09070a 100%);
+}
+
+/* Soft party lighting */
+.welcome-lights {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, #f2a9c533, transparent 25%),
+    radial-gradient(circle at 85% 25%, #f2a9c522, transparent 25%),
+    radial-gradient(circle at 50% 100%, #e58bb522, transparent 40%);
+}
+
+/* Balloon arrangements */
+.balloon-decor {
+  position: absolute;
+  top: 8%;
+  width: 240px;
+  height: 420px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.balloon-left {
+  left: 2%;
+  transform: rotate(-12deg);
+}
+
+.balloon-right {
+  right: 2%;
+  transform: rotate(12deg);
+}
+
+.balloon {
+  width: 72px;
+  height: 90px;
+  border-radius: 50% 50% 46% 46%;
+  position: relative;
+  box-shadow:
+    inset -12px -10px 18px #0004,
+    inset 9px 8px 15px #ffffff35,
+    0 8px 20px #0005;
+}
+
+.balloon::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  background: inherit;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 95px;
+  background: #ffffff70;
+  top: 94px;
+  left: 50%;
+}
+
+.balloon-pink {
+  background: radial-gradient(circle at 30% 25%, #ffd9e8, #ed8db4 65%, #a94d76);
+}
+
+.balloon-black {
+  background: radial-gradient(circle at 30% 25%, #777078, #29232d 60%, #09070a);
+}
+
+.balloon-white {
+  background: radial-gradient(circle at 30% 25%, #ffffff, #f6dfe9 65%, #cbaab9);
+}
+
+.balloon-ribbon {
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  border-left: 2px solid #efa9c2;
+  border-radius: 50%;
+  bottom: -120px;
+  left: 35%;
+  opacity: .7;
+}
+
+/* Floating sparkles */
+.welcome-sparkle {
+  position: absolute;
+  color: #f8c5d9;
+  z-index: 2;
+  text-shadow: 0 0 15px #f8c5d9;
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle-one { top: 18%; left: 25%; font-size: 27px; }
+.sparkle-two { top: 28%; right: 23%; font-size: 32px; animation-delay: 1s; }
+.sparkle-three { bottom: 19%; left: 23%; font-size: 22px; animation-delay: 2s; }
+.sparkle-four { bottom: 15%; right: 25%; font-size: 27px; animation-delay: 1.5s; }
+
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0) rotate(0); opacity: .4; }
+  50% { transform: translateY(-15px) rotate(20deg); opacity: 1; }
+}
+
+/* Main anniversary backdrop */
+.welcome-content {
+  width: min(100%, 720px);
+  min-height: 470px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 55px 30px;
+  border: 1px solid #efa9c277;
+  outline: 1px solid #efa9c222;
+  outline-offset: 9px;
+  background:
+    linear-gradient(145deg, #21151eec, #100b12f5);
+  box-shadow:
+    0 25px 100px #0009,
+    0 0 65px #efa9c222,
+    inset 0 0 60px #efa9c20b;
+}
+
+.welcome-content::before,
+.welcome-content::after {
+  content: '✧';
+  position: absolute;
+  color: #f3b5cd;
+  font-size: 30px;
+}
+
+.welcome-content::before {
+  top: 18px;
+  left: 22px;
+}
+
+.welcome-content::after {
+  bottom: 18px;
+  right: 22px;
+}
+
+.welcome-top-decoration {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #f2a9c5;
+  margin-bottom: 30px;
+}
+
+.welcome-top-decoration span {
+  font-size: 22px;
+}
+
+.welcome-eyebrow {
+  color: #f2b4cb;
+  font-size: 10px;
+  letter-spacing: .35em;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.welcome-content h1 {
+  color: #fff8fb;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+
+.welcome-content h1 span {
+  display: block;
+  color: #efa9c2;
+  font-style: italic;
+  margin-top: 7px;
+}
+
+.welcome-name-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 27px 0 20px;
+  color: #efa9c2;
+}
+
+.welcome-name-divider span {
+  width: 75px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #efa9c2);
+}
+
+.welcome-name-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.welcome-content h2 {
+  color: #fff8fb;
+  font-family: var(--heading-font);
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 400;
+  letter-spacing: .12em;
+}
+
+.welcome-content h2 i {
+  color: #efa9c2;
+  font-style: italic;
+}
+
+.welcome-date {
+  margin-top: 17px;
+  color: #d9b8c7;
+  font-size: 9px;
+  letter-spacing: .25em;
+}
+
+.welcome-button {
+  margin-top: 35px;
+  padding: 16px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border: 1px solid #ffdce9;
+  background: linear-gradient(120deg, #f8d6e3, #e995b6);
+  color: #160e14;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  box-shadow: 0 8px 30px #efa9c233;
+}
+
+.welcome-bottom-decoration {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px;
+  color: #d9a5ba;
+  font-size: 8px;
+  letter-spacing: .3em;
+}
+
+@media (max-width: 850px) {
+  .balloon-decor {
+    width: 150px;
+    opacity: .8;
+  }
+
+  .balloon {
+    width: 55px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-content {
+    min-height: 420px;
+    padding: 45px 20px;
+  }
+
+  .balloon-decor {
+    width: 100px;
+    opacity: .45;
+  }
+
+  .balloon {
+    width: 42px;
+    height: 55px;
+  }
+
+  .welcome-eyebrow {
+    font-size: 8px;
+  }
+
+  .welcome-date {
+    font-size: 7px;
+  }
+}

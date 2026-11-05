@@ -1,0 +1,446 @@
+
+.anniversary-room {
+  min-height: 100vh;
+  padding: 25px 5%;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #382331 0%,
+      #1d151f 45%,
+      #100d12 100%
+    );
+}
+
+/* Background glow */
+
+.room-background-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.glow-one {
+  background: #f0a9c2;
+  top: 20%;
+  left: -150px;
+}
+
+.glow-two {
+  background: #a34e79;
+  right: -130px;
+  bottom: 5%;
+}
+
+/* Header */
+
+.room-header {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-logo {
+  font-family: var(--heading-font);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--white);
+}
+
+.room-logo span {
+  color: var(--pink);
+  font-size: 25px;
+  margin-right: 8px;
+}
+
+.room-progress {
+  width: 150px;
+  text-align: right;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.progress-bar {
+  height: 3px;
+  background: #ffffff20;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--pink);
+  transition: width 0.5s ease;
+}
+
+/* Intro */
+
+.room-intro {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 55px 0 30px;
+}
+
+.room-eyebrow {
+  color: var(--pink);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+}
+
+.room-intro h1 {
+  margin: 17px 0;
+  font-family: var(--heading-font);
+  font-size: clamp(36px, 6vw, 55px);
+  font-weight: 400;
+}
+
+.room-intro h1 span {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.room-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.room-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--pink);
+  margin-top: 20px;
+}
+
+.room-divider span {
+  width: 45px;
+  height: 1px;
+  background: #efa9c266;
+}
+
+/* Party room */
+
+.party-room {
+  position: relative;
+  max-width: 1050px;
+  min-height: 390px;
+  margin: 0 auto;
+
+  border: 1px solid #efa9c233;
+  background: linear-gradient(
+    180deg,
+    #ffffff08,
+    #ffffff02
+  );
+
+  box-shadow: inset 0 0 80px #efa9c208;
+}
+
+/* Balloons */
+
+.party-balloon {
+  position: absolute;
+  z-index: 1;
+
+  width: 48px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  font-size: 20px;
+
+  box-shadow: inset -7px -7px 12px #0002;
+}
+
+.party-balloon::after {
+  content: '';
+  position: absolute;
+  top: 56px;
+  width: 1px;
+  height: 75px;
+  background: #ffffff50;
+}
+
+.balloon-pink {
+  top: 65px;
+  left: 8%;
+  color: white;
+  background: linear-gradient(135deg, #f7ccdd, #bd718f);
+}
+
+.balloon-white {
+  top: 115px;
+  right: 8%;
+  color: #c87597;
+  background: linear-gradient(135deg, #ffffff, #d9c5cf);
+}
+
+.balloon-black {
+  top: 220px;
+  left: 4%;
+  color: var(--pink);
+  background: linear-gradient(135deg, #55414f, #17121a);
+}
+
+/* Party lights */
+
+.party-lights {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.party-lights span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background: #fff1f7;
+  box-shadow: 0 0 13px 5px #efa9c266;
+
+  animation: lightTwinkle 2s infinite alternate;
+}
+
+.party-lights span:nth-child(even) {
+  animation-delay: 1s;
+}
+
+@keyframes lightTwinkle {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+/* Gift display */
+
+.gift-display {
+  position: relative;
+  z-index: 3;
+
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 45px 15px 65px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Gift objects */
+
+.gift-object {
+  min-width: 0;
+  min-height: 230px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 18px 8px;
+
+  color: var(--white);
+  background: #ffffff05;
+  border: 1px solid #efa9c200;
+
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.gift-object:hover:not(:disabled) {
+  background: #efa9c20d;
+  border-color: #efa9c255;
+}
+
+.gift-status {
+  position: absolute;
+  top: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--pink);
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+
+.gift-art {
+  width: 115px;
+  height: 115px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--pink-light);
+  background: linear-gradient(145deg, #f0a9c233, #ffffff08);
+  border: 1px solid #f0a9c255;
+
+  box-shadow: 0 15px 30px #0005;
+}
+
+.gift-box .gift-art {
+  background: linear-gradient(135deg, #eeb5ca, #b15e83);
+  color: white;
+  border-color: #ffdce9;
+  box-shadow: 0 12px 25px #0007, inset 0 0 20px #fff3;
+}
+
+.gift-letter .gift-art {
+  background: #f4d9e4;
+  color: #9c4f70;
+  transform: rotate(-4deg);
+}
+
+.gift-surprise .gift-art {
+  background: linear-gradient(135deg, #dba0b8, #77435e);
+}
+
+.gift-final .gift-art {
+  background: linear-gradient(135deg, #fff0f5, #d58ba8);
+  color: #9c4f70;
+  box-shadow: 0 0 30px #efa9c233;
+}
+
+.gift-title {
+  font-family: var(--heading-font);
+  font-size: 16px;
+}
+
+.gift-subtitle {
+  color: var(--muted);
+  font-size: 9px;
+  text-align: center;
+}
+
+.gift-object:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Floor */
+
+.room-floor {
+  position: absolute;
+  bottom: 42px;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #efa9c299,
+    transparent
+  );
+  box-shadow: 0 10px 25px #000;
+}
+
+/* Caption */
+
+.party-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #bda2b1;
+  font-size: 7px;
+  letter-spacing: 0.18em;
+}
+
+.party-caption svg {
+  color: var(--pink);
+}
+
+/* Footer */
+
+.room-footer {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.room-footer p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.room-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+
+  color: #a88b9b;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+.room-footer svg {
+  color: var(--pink);
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .gift-display {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .party-room {
+    min-height: 600px;
+  }
+
+  .gift-object {
+    min-height: 220px;
+  }
+
+  .balloon-black {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .room-header {
+    align-items: flex-start;
+  }
+
+  .room-logo {
+    font-size: 9px;
+  }
+
+  .room-progress {
+    width: 115px;
+    font-size: 7px;
+  }
+
+  .gift-title {
+    font-size: 14px;
+  }
+}
